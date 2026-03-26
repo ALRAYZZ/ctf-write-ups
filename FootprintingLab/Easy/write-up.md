@@ -59,7 +59,7 @@ For FTP we tried the credentials provided by the exercise introduction notes, an
 
 This resulted on a successful login, but an empty directory.
 
-![alt text](iamges/image-13.png)
+![alt text](images/image-13.png)
 
 We also tried to list hidden files, but nothing of use was found.
 

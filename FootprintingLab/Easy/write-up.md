@@ -15,7 +15,7 @@ Finally we were provided some credentials: "ceil:qwer1234"
 ## Nmap
 We started with a basic Nmap scan with version script.
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 Here we were able to see the 4 ports and services open to us.
 
@@ -30,14 +30,14 @@ After gathering the needed domain for a proper DNS enumeration we proceeded.
 
 ### Query Start of Authority (SOA)
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 We find that the DNS exists and its authoritative meaning potential enumeration.
 Recursion is disabled.
 
 ### Query Name Server (NS)
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 Nameserver was identified with its IP and domain.
 
@@ -46,26 +46,26 @@ The logical next step in the DNS would be to try a Zone Transfer
 ### DnsEnum Tool
 Finally we used dnsenum tool using a wordlist
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 ## FTP
 Finally we tried to connect and scan the FTP services, since we had two services open, one on the common port 21 TCP and a custom one on 2121 TCP.
 
 For FTP we tried the credentials provided by the exercise introduction notes, and first we try the common port 21
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 This resulted on a successful login, but an empty directory.
 
-![alt text](image-13.png)
+![alt text](iamges/image-13.png)
 
 We also tried to list hidden files, but nothing of use was found.
 
 So we tried the other FTP port 2121
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 This time we found many directories that we will later analize
 
@@ -77,7 +77,7 @@ This time we found many directories that we will later analize
 ## DNS
 After the DNS enumeration and discoveries, we proceed and try a Zone transfer.
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 We succesfully are able to do it, extracting valuable information about the company tools and sub domains.
 
@@ -85,34 +85,34 @@ We found tools like Mailgun(mailgun.org), Google Workspace(_spf.google.com) or G
 
 As an extra we tried some CHAOS queries on the server, that allowed us to retrieve the hostname.
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 ## FTP
 With the enumeration we did on the service we found dangerous exposed directories like .bash_histroy and the .ssh directroy, which usually holds SSH keys.
 
-![alt text](image-15.png)
+![alt text](images/image-15.png)
 
 As expected .ssh directory contained the keys and bash history gave some clues on the flag location.
 
-![alt text](image-16.png)
+![alt text](images/image-16.png)
 
 # 3. Exploitation and Post Exploitation
 
 The most obvious path was to use those SSH credentials on the SSH service we found on port 22/TCP and see if that would give us access. Using the username provided.
 
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 It gave us access to the ceil account on the target server.
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 Finally, and with the help of the bash_history we found the flag.
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 # 4. Remediation
 

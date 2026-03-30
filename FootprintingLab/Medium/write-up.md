@@ -46,7 +46,7 @@ We can see in both scanns a TechSupport mount.
 
 We see how the service is operating as we use RPC but we found a login
 
-![alt text](images/images/image-6.png)
+![alt text](images/image-6.png)
 
 Also tried Samba Share Enumerator tool
 
@@ -67,7 +67,7 @@ After discovering thhe public share, we mount it locally to investigate it
 
 And found a batch of tickets.txt
 
-![alt text](images/images/image-5.png)
+![alt text](images/image-5.png)
 
 Investigating a bit more the tickets we run:
 
@@ -107,7 +107,7 @@ sa usually stands for System Administrator and is the default account for Micros
 
 We confirm it
 
-![alt text](images/images/image-16.png)
+![alt text](images/image-16.png)
 
 Using WinRM service and the credentials
 

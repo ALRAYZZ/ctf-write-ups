@@ -4,9 +4,9 @@
 
 Starting with a basic Nmap scan
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 We found many services with open ports:
 
@@ -36,9 +36,9 @@ RDP/WinRM - If info/password log in
 
 We start with NFS because many times the shares are accessible to anyone on then network.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 We can see in both scanns a TechSupport mount.
 
@@ -46,15 +46,15 @@ We can see in both scanns a TechSupport mount.
 
 We see how the service is operating as we use RPC but we found a login
 
-![alt text](image-6.png)
+![alt text](images/images/image-6.png)
 
 Also tried Samba Share Enumerator tool
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 And some manual SMB client connections
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 
 # 2. Vulnerability Discovery
@@ -63,15 +63,15 @@ And some manual SMB client connections
 
 After discovering thhe public share, we mount it locally to investigate it
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 And found a batch of tickets.txt
 
-![alt text](image-5.png)
+![alt text](images/images/image-5.png)
 
 Investigating a bit more the tickets we run:
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 To see if we get any match, and we do.
 

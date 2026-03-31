@@ -61,7 +61,7 @@ And some manual SMB client connections
 
 ## NFS
 
-After discovering thhe public share, we mount it locally to investigate it
+After discovering the public share, we mount it locally to investigate it
 
 ![alt text](images/image-4.png)
 
